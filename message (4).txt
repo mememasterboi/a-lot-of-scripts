@@ -1,0 +1,88 @@
+local library = loadstring(game:HttpGet(('https://pastebin.com/raw/FsJak6AT')))() -- It's obfuscated, I won't let you see my ugly coding skills. =)
+
+targetplayername = "something"
+killtoggle = false
+killalltoggle = false
+Godmode = false
+distance = -1
+
+local w = library:CreateWindow("Window")
+
+local b = w:CreateFolder("Folder")
+
+b:Label("Pretty Useless NGL",Color3.fromRGB(38,38,38),Color3.fromRGB(0,216,111)) --BgColor,TextColor
+
+b:Box("Distance","number",function(value) -- "number" or "string"
+    print(value)
+    distance = value
+end)
+
+b:Box("Player","Name",function(value) -- "number" or "string"
+    print(value)
+    targetplayername = value
+end)
+
+b:Toggle("Toggle",function(bool)
+	killtoggle = bool
+end)
+
+b:Toggle("Kill all",function(bool)
+	killalltoggle = bool
+end)
+
+b:Toggle("Godmode",function(bool)
+	Godmode = bool
+end)
+
+
+
+
+
+b:DestroyGUI()
+
+b:GuiSettings() 
+
+
+game:GetService('RunService').Heartbeat:connect(function()
+	local chance = math.random(1,2)
+	if killtoggle == true and chance == 1 then
+		playerFarm()
+	end
+	if killalltoggle == true and chance == 1 then
+		allFarm()
+	end
+
+	if Godmode == true then
+		autorespawn()
+	end
+end)
+
+
+function playerFarm()
+	local enemy = game.Workspace:FindFirstChild(targetplayername)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = enemy.HumanoidRootPart.CFrame + enemy.HumanoidRootPart.CFrame.lookVector * -1.5
+end
+
+
+function allFarm()
+	for i,v in pairs(workspace:GetDescendants()) do
+		if v.Name == "HumanoidRootPart" then
+			for i = 1,10 do
+				Game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame + v.CFrame.lookVector * -1.5
+			end
+		end
+	end
+end
+
+function autorespawn()
+	if game.Players.LocalPlayer.Character.Humanoid.Health < 90 then 
+		local lastPos = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").position
+		game:GetService("ReplicatedStorage").RemoteTriggers.SpawnIn:FireServer()
+		for i = 1,10 do
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(lastPos)
+		end
+	end
+end
+
+
+
