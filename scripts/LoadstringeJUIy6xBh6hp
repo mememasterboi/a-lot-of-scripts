@@ -1,0 +1,168 @@
+local library = loadstring(game:HttpGet(('https://pastebin.com/raw/FsJak6AT')))() 
+
+
+game.StarterGui:SetCore("SendNotification", {
+	Title = "HEY YOU DUMMY"; -- the title (ofc)
+	Text = "press 'z' to unlock ur cursor"; -- what the text says (ofc)
+	Icon = ""; -- the image if u want.
+	Duration = 5; -- how long the notification should in secounds
+})
+
+
+local main = library:CreateWindow("The Rake NOOB")
+
+local features = main:CreateFolder("Teleports")
+
+
+features:Button("Shop",function()
+	local oh1 = CFrame.new(318.9375, 6.45589352, -288.232697)
+	local oh2 = game:GetService("Players")
+	local oh3 = oh2.LocalPlayer.Character.HumanoidRootPart
+	
+	
+	oh3.CFrame = oh1
+	
+	-- end of script
+end)
+
+features:Button("Radio Tower",function()
+	local oh1 = CFrame.new(10.2362328, 5.69381571, -80.9586258)
+	local oh2 = game:GetService("Players")
+	local oh3 = oh2.LocalPlayer.Character.HumanoidRootPart
+	
+	
+	oh3.CFrame = oh1
+	
+	-- end of script
+end)
+
+features:Button("Town Square",function()
+	local oh1 = CFrame.new(68.7066345, 10.0346107, -19.0399666)
+	local oh2 = game:GetService("Players")
+	local oh3 = oh2.LocalPlayer.Character.HumanoidRootPart
+	
+	
+	oh3.CFrame = oh1
+	
+	-- end of script
+end)
+
+features:Button("Town Square 2",function()
+	local oh1 = CFrame.new(-176.308655, 18.7816982, 44.0917587)
+	local oh2 = game:GetService("Players")
+	local oh3 = oh2.LocalPlayer.Character.HumanoidRootPart
+	
+	
+	oh3.CFrame = oh1
+	
+	-- end of script
+end)
+
+features:Button("Watchtower",function()
+	local oh1 = CFrame.new(-189.59697, 55.0346146, -186.208038)
+	local oh2 = game:GetService("Players")
+	local oh3 = oh2.LocalPlayer.Character.HumanoidRootPart
+	
+	
+	oh3.CFrame = oh1
+	
+	-- end of script
+end)
+
+features:Button("Generator",function()
+	local oh1 = CFrame.new(80.1540451, 16.8000031, 121.030876)
+	local oh2 = game:GetService("Players")
+	local oh3 = oh2.LocalPlayer.Character.HumanoidRootPart
+	
+	
+	oh3.CFrame = oh1
+	
+	-- end of script
+end)
+
+features:Button("Main Safe House",function()
+	local oh1 = CFrame.new(348.265869, 5.60998249, 289.867096)
+	local oh2 = game:GetService("Players")
+	local oh3 = oh2.LocalPlayer.Character.HumanoidRootPart
+	
+	
+	oh3.CFrame = oh1
+	
+	-- end of script
+end)
+
+
+features:Button("Safe House 1",function()
+	local oh1 = CFrame.new(33.5508957, 21.4999943, -208.582993)
+	local oh2 = game:GetService("Players")
+	local oh3 = oh2.LocalPlayer.Character.HumanoidRootPart
+	
+	
+	oh3.CFrame = oh1
+	
+	-- end of script
+end)
+
+
+features:Button("Safe House 2",function()
+	local oh1 = CFrame.new(-53.720871, 9.80472755, 291.597656)
+	local oh2 = game:GetService("Players")
+	local oh3 = oh2.LocalPlayer.Character.HumanoidRootPart
+	
+	
+	oh3.CFrame = oh1
+	
+	-- end of script
+end)
+
+features:Button("The Rake",function()
+	local player = game.Players.LocalPlayer
+	local character = player.Character
+	character:WaitForChild("HumanoidRootPart").CFrame = game.workspace.The_Rake.Head.CFrame
+end)
+
+
+local stuff = main:CreateFolder("Features")
+
+stuff:Toggle("Autofarm",function(bool)
+	teleportout = bool
+end)
+
+stuff:Toggle("Infinte Run",function(runningboi)
+	runfastboi = runningboi
+end)
+
+stuff:Button("Fullbright",function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/mememasterboi/a-lot-of-scripts/master/scripts/Loadstringyq5LwXKumxFo", true))()
+end)
+
+stuff:Button("Reset Walkspeed",function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "bruh"; -- the title (ofc)
+		Text = "just press shift u lazy "; -- what the text says (ofc)
+		Icon = ""; -- the image if u want.
+		Duration = 7; -- how long the notification should in secounds
+	})
+	
+end)
+
+
+
+while true do
+	wait()
+	if teleportout == true then
+		local oh1 = CFrame.new(-373.201782, 5, -232.528229)
+		local oh2 = game:GetService("Players")
+		local oh3 = oh2.LocalPlayer.Character.HumanoidRootPart
+		
+		
+		oh3.CFrame = oh1
+		
+		-- end of script
+		wait()
+	end
+	if runfastboi == true then
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50
+		wait()
+	end
+end
